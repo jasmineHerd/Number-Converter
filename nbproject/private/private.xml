@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/numcconv/NumConvView.java</file>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/business/Dec2Bin.java</file>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/business/Conversion.java</file>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/business/Dec2Num.java</file>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/business/Dec2BinB.java</file>
-            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv_starter/src/business/Bin2Dec.java</file>
+            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv/src/business/Dec2Hex.java</file>
+            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv/src/numcconv/NumConvView.java</file>
+            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv/src/business/Bin2Dec.java</file>
+            <file>file:/Users/jasmineherd/code/IS287_Java2/NumConv/src/business/Dec2BinB.java</file>
         </group>
     </open-files>
 </project-private>

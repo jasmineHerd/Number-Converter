@@ -106,6 +106,9 @@
             <Property name="text" type="java.lang.String" resourceKey="jradD2B.text"/>
             <Property name="name" type="java.lang.String" value="jradD2B" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jradD2BItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jradB2D">
           <Properties>
@@ -115,6 +118,9 @@
             <Property name="text" type="java.lang.String" resourceKey="jradB2D.text"/>
             <Property name="name" type="java.lang.String" value="jradB2D" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jradB2DItemStateChanged"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <Properties>
@@ -195,6 +201,9 @@
             <Property name="text" type="java.lang.String" resourceKey="jradD2Hex.text"/>
             <Property name="name" type="java.lang.String" value="jradD2Hex" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jradD2HexItemStateChanged"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

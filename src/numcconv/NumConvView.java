@@ -5,6 +5,7 @@ import business.Bin2Dec;
 import business.Conversion;
 import business.Dec2Bin;
 import business.Dec2BinB;
+import business.Dec2Hex;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -139,10 +140,20 @@ public class NumConvView extends FrameView {
         buttonGroup1.add(jradD2B);
         jradD2B.setText(resourceMap.getString("jradD2B.text")); // NOI18N
         jradD2B.setName("jradD2B"); // NOI18N
+        jradD2B.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jradD2BItemStateChanged(evt);
+            }
+        });
 
         buttonGroup1.add(jradB2D);
         jradB2D.setText(resourceMap.getString("jradB2D.text")); // NOI18N
         jradB2D.setName("jradB2D"); // NOI18N
+        jradB2D.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jradB2DItemStateChanged(evt);
+            }
+        });
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
@@ -189,6 +200,11 @@ public class NumConvView extends FrameView {
         buttonGroup1.add(jradD2Hex);
         jradD2Hex.setText(resourceMap.getString("jradD2Hex.text")); // NOI18N
         jradD2Hex.setName("jradD2Hex"); // NOI18N
+        jradD2Hex.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jradD2HexItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -326,10 +342,13 @@ public class NumConvView extends FrameView {
            c = new Bin2Dec(jtxtValue.getText());
         }else if(jradD2B.isSelected()){
             c = new Dec2Bin(jtxtValue.getText());
-        }else{
+        }else if(jradD2Hex.isSelected()){
+            c = new Dec2Hex(jtxtValue.getText());
+        }
+        else{
         statusMessageLabel.setText("Unknown Operation");
         return;
-    }
+    } 
            if (c.getErrorMsg().isEmpty()) {
               ArrayList<String> steps = c.getProcessLog();
                for (String step : steps) {
@@ -348,8 +367,29 @@ public class NumConvView extends FrameView {
         jtxtSteps.setText("");
         jtxtResult.setText("");
         buttonGroup1.clearSelection();
+        jLabel3.setText("Value:");
+        jLabel4.setText("Result:");
         jtxtValue.requestFocusInWindow();
     }//GEN-LAST:event_jbtnClearActionPerformed
+
+    private void jradD2HexItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jradD2HexItemStateChanged
+        if(jradD2Hex.isSelected()){
+            jLabel3.setText(Dec2Hex.VALUEDESC + ": ");
+            jLabel4.setText(Dec2Hex.RESULTDESC+ ": ");
+        }
+    }//GEN-LAST:event_jradD2HexItemStateChanged
+
+    private void jradD2BItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jradD2BItemStateChanged
+        if(jradD2B.isSelected()){
+            jLabel3.setText(Dec2BinB.VALUEDESC + ": ");
+            jLabel4.setText(Dec2BinB.RESULTDESC+ ": ");}
+    }//GEN-LAST:event_jradD2BItemStateChanged
+
+    private void jradB2DItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jradB2DItemStateChanged
+        if(jradB2D.isSelected()){
+            jLabel3.setText(Bin2Dec.VALUEDESC + ": ");
+            jLabel4.setText(Bin2Dec.RESULTDESC+ ": ");}
+    }//GEN-LAST:event_jradB2DItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
